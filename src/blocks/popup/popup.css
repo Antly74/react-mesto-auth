@@ -1,0 +1,19 @@
+.popup {
+  position: fixed;
+  z-index: 100;
+  color: #000000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', Arial, sans-serif;
+  cursor: pointer;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* используется задержка для visibility, пока прозрачность отрабатывает */
+  transition: visibility 0s linear 500ms, opacity 500ms;
+}

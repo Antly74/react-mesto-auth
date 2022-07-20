@@ -1,0 +1,6 @@
+.content {
+  width: 100%;
+  max-width: 918px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,9 @@
+.popup__window {
+  max-width: 430px;
+  width: 100%;
+  background-color: white;
+  margin: 19px;
+  border-radius: 8px;
+  position: relative;
+  cursor: default;
+}

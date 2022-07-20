@@ -1,0 +1,22 @@
+.profile {
+  margin: 0 19px 14px;
+  width: calc(100% - 38px);
+  max-width: 912px;
+  display: grid;
+  grid-template-columns: 150px repeat(2, auto) 1fr;
+  grid-template-rows: minmax(100, max-content) max-content;
+  grid-template-areas:
+    'avatar name edit add'
+    'avatar desc desc add';
+}
+@media (max-width: 640px) {
+  .profile {
+    margin-bottom: 0;
+    grid-template-columns: 1fr minmax(190px, min-content) 1fr;
+    grid-template-areas:
+      'avatar avatar avatar'
+      'inv name edit'
+      'desc desc desc'
+      'add add add';
+  }
+}

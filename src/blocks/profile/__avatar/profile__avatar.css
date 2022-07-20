@@ -1,0 +1,21 @@
+.profile__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  grid-area: avatar;
+  margin-right: 30px;
+  object-fit: cover;
+}
+
+.profile__avatar:hover {
+  opacity: 0.2;
+  cursor: url("../../../images/EditAvatar.svg") 0 25, pointer;
+}
+
+@media (max-width: 640px) {
+  .profile__avatar {
+    justify-self: center;
+    margin-right: 0;
+    margin-bottom: 26px;
+  }
+}
