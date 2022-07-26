@@ -24,7 +24,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
     //   value changing from a defined to undefined, which should not happen.
     // ЭТО ПОТОМУ ЧТО пользователь может не успеть прогрузиться и тогда будет undefined, поэтому нужно
     // добавить альтернативное значение
-  }, [currentUser]);
+  }, [currentUser, isOpen]);
 
   function handleReset() {
     setIsValid(false);

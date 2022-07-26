@@ -39,6 +39,9 @@ function App() {
       .then((data) => {
         setCurrentUser(curr => {return {...curr, loggedIn: true, email: data.data.email}});
       })
+      .catch((err) => {
+        console.log(`токен кривой: ${err} `);
+      })
     }
 
     // получаем инфо пользователя
@@ -63,6 +66,13 @@ function App() {
     }
   }, [location]);
 
+  const isOpen = isAddPlacePopupOpen ||
+    isEditAvatarPopupOpen ||
+    isEditProfilePopupOpen ||
+    selectedCard._id !== undefined ||
+    card2Delete._id !== undefined ||
+    flagsInfoTooltip.isOpen;
+
   // закрытие попапа при нажатии на Esc
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -70,21 +80,13 @@ function App() {
         closeAllPopups();
       }
     }
-    if (
-      isAddPlacePopupOpen ||
-      isEditAvatarPopupOpen ||
-      isEditProfilePopupOpen ||
-      selectedCard._id !== undefined ||
-      card2Delete._id !== undefined ||
-      flagsInfoTooltip.isOpen
-      )
-    {
+    if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      }
     }
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    }
-  }, [isAddPlacePopupOpen, isEditAvatarPopupOpen, isEditProfilePopupOpen, selectedCard, card2Delete, flagsInfoTooltip])
+  }, [isOpen])
 
   useEffect(() => {
     if (flagsInfoTooltip.isOpen && flagsInfoTooltip.isOk) {
