@@ -1,0 +1,5 @@
+@media (max-width: 640px) {
+  .header__nav-burger {
+    display: none;
+  }
+}

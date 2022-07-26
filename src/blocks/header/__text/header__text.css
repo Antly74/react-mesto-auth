@@ -1,0 +1,11 @@
+.header__text {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.22;
+  color: white;
+  text-decoration-line: none;
+  text-align: center;
+}

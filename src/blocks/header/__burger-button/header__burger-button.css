@@ -1,0 +1,30 @@
+.header__burger-button {
+  width: 24px;
+  height: 21px;
+  border: 0px;
+  border-bottom: solid 3px white;
+  border-top: solid 3px white;
+  background-color: transparent;
+  position: relative;
+  margin-right: 30px;
+  display: none;
+  cursor: pointer;
+}
+.header__burger-button::before {
+  content: "";
+  width: 24px;
+  height: 0px;
+  border-top: solid 3px white;
+  position: absolute;
+  top: 6px;
+  left: 0px;
+}
+.header__burger-button:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .header__burger-button {
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+.header__nav {
+  padding-bottom: 0px;
+  display: flex;
+}
+@media (max-width: 935px) {
+  .header__nav {
+    padding-right: 30px;
+  }
+}

@@ -1,0 +1,14 @@
+.popup__save-button_theme_dark {
+  background-color: white;
+  border: solid 2px white;
+  color: black;
+  margin: 180px 0 15px;
+}
+.popup__save-button_theme_dark:hover {
+  opacity: 0.85;
+}
+@media (max-width: 640px) {
+  .popup__save-button_theme_dark {
+    margin-top: 80px;
+  }
+}

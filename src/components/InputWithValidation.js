@@ -1,18 +1,18 @@
 import { useState } from "react";
 
-function InputWithValidation ({isValid, onInputEvent, avatarRef, ...props}) {
+function InputWithValidation ({isValid, onInputEvent, avatarRef, isDarkTheme, ...props}) {
 
   const [errorText, setErrorText] = useState('');
 
   function handleInput(e) {
-    onInputEvent(e.target.validity.valid);
+    onInputEvent(e.target.validity.valid, e.target.name);
     setErrorText(e.target.validationMessage);
   }
 
   return (
     <>
       <input id={props.id} name={props.id} ref={avatarRef}
-        className={`popup__input ${!isValid && 'popup__input_type_error'}`}
+        className={`popup__input ${isDarkTheme && 'popup__input_theme_dark'} ${!isValid && 'popup__input_type_error'}`}
         {...props}
         onInput={handleInput}
       />
@@ -26,6 +26,3 @@ function InputWithValidation ({isValid, onInputEvent, avatarRef, ...props}) {
 }
 
 export default InputWithValidation;
-
-// inputErrorClass: 'popup__input_type_error',
-// errorClass: 'popup__input-error_visible'
