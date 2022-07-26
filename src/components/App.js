@@ -37,7 +37,6 @@ function App() {
     if (localStorage.getItem('token')) {
       auth.getUserInfo(localStorage.getItem('token'))
       .then((data) => {
-        console.log(data);
         setCurrentUser(curr => {return {...curr, loggedIn: true, email: data.data.email}});
       })
     }
@@ -90,7 +89,6 @@ function App() {
   useEffect(() => {
     if (flagsInfoTooltip.isOpen && flagsInfoTooltip.isOk) {
       return () => {
-        console.log('переходим /sing-in');
         history.push('/sing-in');
       };
     }
